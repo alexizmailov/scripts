@@ -8,7 +8,7 @@ file $1
 tr -cd '\11\12\15\40-\176' < $1 > "$1"_no_binary.sql
 
 # Make sure it's a stanndard file format
-dos2unix "$1"_file_no_binary.sql
+dos2unix "$1"_no_binary.sql
 
 # Remove non-UTF8 characters from the file
 iconv -f UTF-8 -t ISO-8859-1//IGNORE --output="utf8_$1" "$1_file_no_binary.sql"
